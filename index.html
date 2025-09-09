@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    form { max-width: 400px; margin: auto; }
+    input, textarea { width: 100%; margin: 8px 0; padding: 10px; }
+    button { background: #28a745; color: white; padding: 10px; border: none; cursor: pointer; }
+    #whatsapp { position: fixed; bottom: 20px; right: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Contact Us</h2>
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<p id="response"></p>
+
+<!-- WhatsApp Chat Button -->
+<a id="whatsapp" href="https://wa.me/919999999999" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp.png"/>
+</a>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwYb4WB7xhtsonZy8qFVNI6hOP1Z3Sh_72K1GVRLDaUaXRds5tIli11gff8XSpJfPXD/exec"; // Replace with your deployed URL
+
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value
+    };
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(response => {
+      document.getElementById("response").innerText = "✅ Message sent successfully!";
+      e.target.reset();
+    })
+    .catch(err => {
+      document.getElementById("response").innerText = "❌ Error sending message.";
+      console.error(err);
+    });
+  });
+</script>
+
+</body>
+</html>
