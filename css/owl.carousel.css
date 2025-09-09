@@ -1,0 +1,4 @@
+
+/* owl.carousel.css - minimal */
+.owl-carousel { position:relative; }
+.owl-carousel .item img { width:100%; border-radius:6px; }

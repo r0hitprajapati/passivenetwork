@@ -1,0 +1,14 @@
+
+/* style.css - revamped site styles */
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; }
+.site-header .hero { background: linear-gradient(90deg, #0d6efd, #0069d9); color: white; padding:60px 0; text-align:center; margin-bottom:20px; }
+.site-header .hero h1 { font-size:36px; margin:0 0 10px; }
+.section { padding:40px 0; }
+.section.bg-light { background:#f8f9fa; }
+.services-grid .service-card { background:#fff; border-radius:6px; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:20px; }
+.service-card img { max-height:160px; width:auto; margin-bottom:10px; }
+.footer { background:#222; color:#ddd; padding:20px 0; margin-top:30px; }
+#whatsapp-btn { position:fixed; right:20px; bottom:20px; background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:24px; text-decoration:none; }
+#contact form .form-control { border-radius:4px; }
+.hero-content .btn { margin:8px; }
+@media (max-width:767px){ .site-header .hero { padding:40px 10px; } .hero-content h1 { font-size:26px; } }

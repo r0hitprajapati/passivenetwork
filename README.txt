@@ -1,0 +1,1 @@
+Unzip and place the folder in your GitHub Pages repository root. Update 'YOUR_GOOGLE_APPS_SCRIPT_URL' in index.html with your Apps Script URL.
